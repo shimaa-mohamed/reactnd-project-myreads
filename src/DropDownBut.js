@@ -1,9 +1,13 @@
 import React, { Component } from "react";
+
+
 class DropDownBut extends Component {
-  componentDidMount() {
-    console.log(this.props.book.title + "   " + this.props.book.shelf);
-  }
   state = { selectValue: this.props.book.shelf };
+  // componentDidMount() {
+  //   console.log("ahoooooooooooooo");
+  //   console.log(this.props.book.title + "   " + this.props.book.shelf);
+  //   this.setState({ selectValue: this.props.book.shelf });
+  // }
 
   changeValue = (e) => {
     this.setState({ selectValue: e.target.value });
@@ -15,7 +19,8 @@ class DropDownBut extends Component {
     return (
       <div className="book-shelf-changer">
         <select
-          value={this.state.selectValue ? this.state.selectValue : "none"}
+          //value={this.state.selectValue ? this.state.selectValue : "none"}
+          value={this.props.book.shelf}
           onChange={(e) => this.changeValue(e)}
         >
           <option value="move" disabled>

@@ -36,7 +36,7 @@ class BookComponent extends Component {
                 }}
               />
               <DropDownBut
-                book={bookprops}
+                book={this.props.bookprops}
                 keepState={this.props.updateShelf}
               />
             </div>

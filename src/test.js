@@ -3,8 +3,11 @@ import * as BooksAPI from "./BooksAPI";
 import ShelfComponent from "./ShelfComponent";
 import { Route, BrowserRouter } from "react-router-dom";
 import SearchPage from "./SearchPage";
+
+
 class Test extends Component {
   state = { books: [], query: "", whatToView: [], flag: false };
+
   componentDidMount() {
     BooksAPI.getAll().then((myarr) => this.setState({ books: myarr }));
   }
@@ -27,7 +30,7 @@ class Test extends Component {
       BooksAPI.getAll().then((myarr) => this.setState({ books: myarr }));
     });
     // BooksAPI.getAll().then((myarr) => this.setState({ books: myarr }));
-    this.setState({ flag: true });
+   // this.setState({ flag: true });
   };
 
   render() {
