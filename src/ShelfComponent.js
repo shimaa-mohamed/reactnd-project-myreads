@@ -5,7 +5,7 @@ import { Route, BrowserRouter, Link } from "react-router-dom";
 
 class ShelfComponent extends Component {
   render() {
-    const { booksFromApi, shelfTitle, updateShelf,flag } = this.props;
+    const { booksFromApi, shelfTitle, updateShelf, flag } = this.props;
     let shelfName = "";
     if (shelfTitle === "Currently Reading") {
       shelfName = "currentlyReading";

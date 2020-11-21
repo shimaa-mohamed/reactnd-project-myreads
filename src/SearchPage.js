@@ -53,7 +53,7 @@ class SearchPage extends Component {
     //   });
     // });
     //console.log("show");
-    console.log("show :");
+    //console.log("show :");
     console.log(show);
 
     return (
