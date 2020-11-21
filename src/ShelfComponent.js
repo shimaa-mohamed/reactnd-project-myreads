@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import BookComponent from "./BookComponent";
-import { Route, BrowserRouter, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class ShelfComponent extends Component {
   render() {
-    const { booksFromApi, shelfTitle, updateShelf, flag } = this.props;
+    const { booksFromApi, shelfTitle, updateShelf } = this.props;
     let shelfName = "";
     if (shelfTitle === "Currently Reading") {
       shelfName = "currentlyReading";
@@ -16,7 +15,6 @@ class ShelfComponent extends Component {
     }
 
     let booksInShelf = booksFromApi.filter((book) => book.shelf === shelfName);
-    // console.log(booksInShelf);
 
     return (
       <div className="bookshelf">
@@ -24,7 +22,7 @@ class ShelfComponent extends Component {
         <div className="bookshelf-books">
           <ol className="books-grid">
             {booksInShelf.map((book) => (
-              <li>
+              <li key={book.id}>
                 <BookComponent bookprops={book} updateShelf={updateShelf} />
               </li>
             ))}
@@ -36,7 +34,7 @@ class ShelfComponent extends Component {
         </div>
       </div>
 
-      ////////////////////////////////////////////////
+    
     );
   }
 }
